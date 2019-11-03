@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/principal.css">
+    <title>Calculadora de dano MHGU</title>
+</head>
+
+<body>
+    <div class="container-principal">
+        <main class="container-lado-a-lado">
+
+            <div id="formulario" class="formulario">
+
+                <h1 class="titulo">Dados da arma e skils</h1>
+
+                <div class="caixa-selecao">
+                    <span for="dano-arma">Dano Arma</span>
+                    <input type="number" name="danoArma" id="dano-arma" min="0" required>
+                </div>
+
+                <div class="caixa-selecao">
+                    <span for="affinity-arma">Affinity Arma</span>
+                    <input type="number" name="affinityArma" id="affinity-arma" min="0" required>
+                </div>
+
+
+                <div class="caixa-selecao">
+                    <span class="nome-skill">Attack</span>
+                    <select name="attack" id="attack">
+                        <option value="0">Não</option>
+                        <option value="10">Attack Up (S)</option>
+                        <option value="15">Attack Up (M)</option>
+                        <option value="20">Attack Up (L)</option>
+                    </select>
+                </div>
+
+                <div class="caixa-selecao">
+                    <span class="nome-skill">Challenger</span>
+                    <select name="challenger" id="challenger">
+                        <option value="null">Não</option>
+                        <option value="10-10">Challenger +1</option>
+                        <option value="20-15">Challenger +2</option>
+                    </select>
+                </div>
+
+                <div class="caixa-selecao">
+                    <span class="nome-skill">Critical Eye</span>
+                    <select name="critical" id="critical">
+                        <option value="0">Não</option>
+                        <option value="10">Critical Eye +1</option>
+                        <option value="20">Critical Eye +2</option>
+                        <option value="30">Critical Eye +3</option>
+                    </select>
+                </div>
+
+                <div class="caixa-selecao">
+                    <span class="nome-skill">Repeat Offender</span>
+                    <select name="repeatOffender" id="repeat-offender">
+                        <option value="false">Não</option>
+                        <option value="true">Sim</option>
+                    </select>
+                </div>
+
+                <div class="caixa-selecao">
+                    <span class="nome-skill">Critical Boost</span>
+                    <select name="criticalBoost" id="critical-boost">
+                        <option value="false">Não</option>
+                        <option value="true">Sim</option>
+                    </select>
+                </div>
+
+                <div class="caixa-selecao">
+                    <span class="nome-skill">Powercharm</span>
+                    <select name="powercharm" id="power-charm">
+                        <option value="false">Não</option>
+                        <option value="true">Sim</option>
+                    </select>
+                </div>
+
+                <div class="caixa-selecao">
+                    <span class="nome-skill">Powertalon</span>
+                    <select name="powertalon" id="power-talon">
+                        <option value="false">Não</option>
+                        <option value="true">Sim</option>
+                    </select>
+                </div>
+
+                <button class="botao-calcular">Calcular</button>
+            </div>
+
+            <!-- Resultados -->
+            <div class="resultados">
+                <h1 class="titulo">Resultados</h1>
+                <span class="descricao">Serão levados em consideração a média de dano de 10 golpes, além disso não será considerado o fio da arma e nem a comida.</span>
+
+                <div class="resultado-individual">
+                    <span>Dano:</span>
+                    <span class="dano-somado">0</span>
+                </div>
+
+                <div class="resultado-individual">
+                    <span>Dano com Challenger ativo:</span>
+                    <span class="dano-somado-challenger">0</span>
+                </div>
+
+                <div class="resultado-individual">
+                    <span>Affinity:</span>
+                    <span class="affinity-somado">0</span>
+                </div>
+
+                <div class="resultado-individual">
+                    <span>Affinity com Repeat Offender no máximo:</span>
+                    <span class="affinity-somado-repeatoffender">0</span>
+                </div>
+
+                <div class="resultado-individual">
+                    <span>Affinity com Challenger ativo:</span>
+                    <span class="affinity-somado-challenger">0</span>
+                </div>
+
+                <div class="resultado-individual">
+                    <span>Affinity com Challenger ativo e Repeat Offender no máximo:</span>
+                    <span class="affinity-somado-challenger-repearoffender">0</span>
+                </div>
+
+                <div class="resultado-individual">
+                    <span>Dano em 10 golpes somados (nenhum crítico):</span>
+                    <span class="dano-medio">0</span>
+                </div>
+
+                <div class="resultado-individual">
+                    <span>Dano em 10 golpes somados (baseado no affinity):</span>
+                    <span class="dano-medio-critico">0</span>
+                </div>
+
+                <div class="resultado-individual">
+                    <span>Dano em 10 golpes somados (com Challenger ativo):</span>
+                    <span class="dano-medio-challenger">0</span>
+                </div>
+
+                
+            </div>
+        </main>
+    </div>
+
+    <script src="./scripts/jquery-3.3.1.min.js"></script>
+    <script src="./scripts/principal.js"></script>
+</body>
+
+</html>
